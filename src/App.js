@@ -1,8 +1,9 @@
 import './App.css';
+import LargeButton from './components/NavigationButtons/LargeButton';
 
 function App() {
   return (
-    <h1>works</h1>
+    <LargeButton classes={['uppercase', 'ff-serif', 'fs-600', 'text-dark', 'bg-white', 'uppercase']} />
   );
 }
 
