@@ -1,0 +1,16 @@
+.dot-indicators > * {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: hsl(var(--clr-white), 0.174);
+  border: none;
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl(var(--clr-white), 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white), 1);
+}
