@@ -1,6 +1,11 @@
+import Header from "../Header/Header";
+
 const Crew = () => {
     return (
-        <h1>Crew</h1>
+        <div className="crew">
+            <Header />
+            <h1>Crew</h1>
+        </div>
     )
 }
 
