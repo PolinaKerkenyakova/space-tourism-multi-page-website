@@ -1,21 +1,26 @@
+import { Routes, Route, Link } from "react-router-dom";
+
 import './App.css';
-import LargeButton from './components/Navigation/NavigationButtons/LargeButton';
-import PrimaryNavigation from './components/Navigation/PrimaryNavigation';
-import TabNavigation from './components/Navigation/TabNavigation';
-import DotNavigation from './components/Navigation/DotNavigation';
-import NumberNavigation from './components/Navigation/NumberNavigation';
-import PrimaryHeader from './components/Header/PrimaryHeader';
+import Crew from "./components/Crew/Crew";
+import Destinations from "./components/Destinations/Destinations";
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Technology from "./components/Technology/Technology";
 
 function App() {
   return (
-    <>
-      <PrimaryHeader />
-      {/* <LargeButton classes={['uppercase', 'ff-serif', 'fs-600', 'text-dark', 'bg-white', 'uppercase']} />
-      <PrimaryNavigation />
-      <TabNavigation />
-      <DotNavigation />
-      <NumberNavigation /> */}
-    </>
+    <div className="site-wrapper">
+
+      <Header />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/destinations' element={<Destinations />} />
+          <Route path='/crew' element={<Crew />} />
+          <Route path='/technology' element={<Technology />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
 

@@ -1,13 +1,13 @@
 import PrimaryNavigation from '../Navigation/PrimaryNavigation';
-import './PrimaryHeader.css';
+import './Header.css';
 
-const PrimaryHeader = () => {
+const Header = () => {
     return (
         <header>
             <div></div>
             <PrimaryNavigation />
         </header>
-    )
+    );
 }
 
-export default PrimaryHeader;
+export default Header;
