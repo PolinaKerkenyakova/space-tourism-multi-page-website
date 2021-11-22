@@ -86,6 +86,7 @@ body {
   color: hsl(var(--clr-white));
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Images */
@@ -180,7 +181,6 @@ select {
     align-items: end;
   }
 }
-
 
 .home,
 .crew,
