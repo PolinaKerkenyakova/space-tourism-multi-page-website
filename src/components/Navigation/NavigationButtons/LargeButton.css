@@ -1,14 +1,12 @@
 .large-button {
   position: relative;
   z-index: 1;
-  display: grid;
+  display: inline-grid;
   place-items: center;
   padding: 0 2em;
   border-radius: 50%;
   text-decoration: none;
-  height: 17.125rem;
-  width: 17.125rem;
-  /* aspect-ratio: 1; */
+  aspect-ratio: 1;
 }
 
 .large-button::after {
