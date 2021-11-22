@@ -1,6 +1,8 @@
 import Header from "../Header/Header";
 import LargeButton from "../Navigation/NavigationButtons/LargeButton";
 
+import './Home.css';
+
 const Home = () => {
 
     return (

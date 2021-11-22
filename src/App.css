@@ -189,6 +189,8 @@ select {
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
+  background-position: bottom center;
+  background-size: cover;
 }
 
 .sr-only {

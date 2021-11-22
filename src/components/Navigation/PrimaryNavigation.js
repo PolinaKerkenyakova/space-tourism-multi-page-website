@@ -12,7 +12,7 @@ const PrimaryNavigation = () => {
                 <li><Link to="/technology" className="ff-sans-cond uppercase text-white letter-spacing-2"><span>03</span>Technology</Link></li>
             </ul>
         </nav>
-    )    
+    );
 }
 
 export default PrimaryNavigation;
