@@ -7,8 +7,9 @@ const Home = () => {
 
     return (
         <div className="home">
+            <a class="skip-to-content" href="#main">Skip to content</a>
             <Header />
-            <div className="grid-container grid-container--home">
+            <main id="main" className="grid-container grid-container--home">
                 <div>
                     <h1 className="text-light fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to <span className="d-block fs-900 ff-serif text-white">space</span></h1>
                     <p>
@@ -20,7 +21,7 @@ const Home = () => {
                 <div>
                     <LargeButton classes={['uppercase', 'ff-serif', 'text-dark', 'bg-white']} />
                 </div>
-            </div>
+            </main>
         </div>
     )
 }
