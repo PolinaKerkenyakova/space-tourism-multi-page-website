@@ -1,0 +1,28 @@
+.grid-container--crew {
+  --flow-space: 3rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "content";
+}
+
+.grid-container--crew > img {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid hsl(var(--clr-white), 0.1);
+}
+
+.grid-container--crew > .dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--crew > .crew-info {
+  --flow-space: 1rem;
+  margin-top: 3rem;
+  grid-area: content;
+}
+
+.grid-container--crew > .crew-info > .text-white {
+   color: hsl(var(--clr-white), 0.5);
+  }
