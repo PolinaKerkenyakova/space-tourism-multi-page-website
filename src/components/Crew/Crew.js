@@ -10,7 +10,10 @@ const Crew = () => {
             <main id="main" className="grid-container grid-container--crew flow">
                 <h1 className="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
 
-                <img src="/assets/crew/image-douglas-hurley.png" alt="" />
+        <picture>
+            <source srcSet="/assets/crew/image-douglas-hurley.webp" type="image/webp"/>
+            <img src="/assets/crew/image-douglas-hurley.png" alt="" />
+        </picture>
 
                 <DotNavigation />
 

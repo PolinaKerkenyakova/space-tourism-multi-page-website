@@ -11,7 +11,11 @@ const Destinations = () => {
             <main id="main" className="grid-container grid-container--destinations flow">
 
                 <h1 className="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
-                <img src="/assets/destination/image-moon.png" alt="" />
+
+                <picture>
+                    <source srcSet="/assets/destination/image-moon.png" type="image/webp" />
+                    <img src="/assets/destination/image-moon.png" alt="" />
+                </picture>
 
                 <TabNavigation />
 

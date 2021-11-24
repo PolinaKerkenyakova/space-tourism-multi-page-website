@@ -1,3 +1,7 @@
+.crew {
+  background-image: url(./assets/background-crew-mobile.jpg);
+}
+
 .grid-container--crew {
   --flow-space: 3rem;
   grid-template-areas:
@@ -7,7 +11,7 @@
     "content";
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
   grid-area: image;
   max-width: 60%;
   border-bottom: 1px solid hsl(var(--clr-white), 0.1);
@@ -28,6 +32,10 @@
 }
 
 @media (min-width: 35em) {
+  .crew {
+    background-image: url(./assets/background-crew-tablet.jpg);
+  }
+
   .grid-container--crew {
     --flow-space: 4rem;
     padding-bottom: 0;
@@ -39,29 +47,33 @@
       "image";
   }
 
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     max-width: 90%;
     align-self: end;
   }
 }
 
 @media (min-width: 45em) {
-    .grid-container--crew {
-        --flow-space: 4rem;
-        padding-bottom: 0;
-    
-        grid-template-areas:
-          ". title image ."
-          ". content image ."
-          ". tabs image ."
-      }
+  .crew {
+    background-image: url(./assets/background-crew-desktop.jpg);
+  }
 
-      .grid-container--crew > .dot-indicators {
-        padding-bottom: 3rem;
-        justify-self: start;
-      }
+  .grid-container--crew {
+    --flow-space: 4rem;
+    padding-bottom: 0;
 
-      .grid-container--crew > .crew-info {
-        --flow-space: 1.5rem;
-      }
+    grid-template-areas:
+      ". title image ."
+      ". content image ."
+      ". tabs image .";
+  }
+
+  .grid-container--crew > .dot-indicators {
+    padding-bottom: 3rem;
+    justify-self: start;
+  }
+
+  .grid-container--crew > .crew-info {
+    --flow-space: 1.5rem;
+  }
 }
