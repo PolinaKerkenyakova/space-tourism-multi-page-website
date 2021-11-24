@@ -44,3 +44,24 @@
     align-self: end;
   }
 }
+
+@media (min-width: 45em) {
+    .grid-container--crew {
+        --flow-space: 4rem;
+        padding-bottom: 0;
+    
+        grid-template-areas:
+          ". title image ."
+          ". content image ."
+          ". tabs image ."
+      }
+
+      .grid-container--crew > .dot-indicators {
+        padding-bottom: 3rem;
+        justify-self: start;
+      }
+
+      .grid-container--crew > .crew-info {
+        --flow-space: 1.5rem;
+      }
+}
