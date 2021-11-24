@@ -10,9 +10,6 @@ const Crew = () => {
             <main id="main" className="grid-container grid-container--crew flow">
                 <h1 className="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
 
-                <div className="img">
-
-                </div>
                 <img src="/assets/crew/image-douglas-hurley.png" alt="" />
 
                 <DotNavigation />
@@ -26,7 +23,6 @@ const Crew = () => {
                         commander of Crew Dragon Demo-2.
                     </p>
                 </article>
-
             </main>
         </div>
     )
