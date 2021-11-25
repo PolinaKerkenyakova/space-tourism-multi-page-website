@@ -179,7 +179,7 @@ select {
 
 .home,
 .crew,
-.destionations,
+.destinations,
 .technology {
   min-height: 100vh;
   display: grid;
