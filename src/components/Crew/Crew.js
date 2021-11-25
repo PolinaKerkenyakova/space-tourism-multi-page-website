@@ -6,6 +6,7 @@ import './Crew.css';
 const Crew = () => {
     return (
         <div className="crew">
+            <a href="#main" className="skip-to-content">Skip to content</a>
             <Header />
             <main id="main" className="grid-container grid-container--crew flow">
                 <h1 className="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
