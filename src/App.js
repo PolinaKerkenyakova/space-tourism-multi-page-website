@@ -1,11 +1,10 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
-import Crew from "./components/Crew/Crew";
-import Destinations from "./components/Destinations/Destinations";
-// import Header from './components/Header/Header';
+import Crew from './components/Crew/Crew';
+import Destinations from './components/Destinations/Destinations';
 import Home from './components/Home/Home';
-import Technology from "./components/Technology/Technology";
+import Technology from './components/Technology/Technology';
 
 function App() {
   return (
