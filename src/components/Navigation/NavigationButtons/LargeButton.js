@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import './LargeButton.css';
 
 const LargeButton = (props) => {
-    
+
     return (
-        <a href="#" className={'large-button ' + props.classes.join(' ')}>Explore</a>
+        <Link to="/destinations" className={'large-button ' + props.classes.join(' ')}>Explore</Link>
     )
 }
 
