@@ -1,39 +1,58 @@
-import Header from "../Header/Header";
-import TabNavigation from "../Navigation/TabNavigation";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import getData from '../../services/fetchServices';
+
+import Header from '../Header/Header';
+import TabNavigation from '../Navigation/TabNavigation';
 
 import './Destinations.css';
 
 const Destinations = () => {
+
+    const [destination, setDestination] = useState({});
+    const [selectedPlanet, setSelectedPlanet] = useState();
+
+    const getSelectedPlanetHandler = (planetId) => {
+        setSelectedPlanet(planetId);
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const destinationData = await getData('destinations', selectedPlanet);
+            setDestination(destinationData);
+        }
+
+        fetchData();
+    }, [selectedPlanet]);
+
     return (
         <div className="destinations">
-            <a className="skip-to-content" href="#main">Skip to content</a>
+            <Link to="#main" className="skip-to-content">Skip to content</Link>
             <Header />
             <main id="main" className="grid-container grid-container--destinations flow">
 
                 <h1 className="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
                 <picture>
-                    <source srcSet="/assets/destination/image-moon.png" type="image/webp" />
-                    <img src="/assets/destination/image-moon.png" alt="" />
+                    {/* <source srcSet={destination.images.webp || {}} type="image/webp" /> */}
+                    <img src={destination.image} alt={destination.name} />
                 </picture>
 
-                <TabNavigation />
+                <TabNavigation getSelectedPlanet={getSelectedPlanetHandler} />
 
                 <article className="destination-info">
-                    <h2 className="ff-serif uppercase fs-800">Moon</h2>
-                    <p>
-                        See our planet as you’ve never seen it before. A perfect relaxing trip away to help
-                        regain perspective and come back refreshed. While you’re there, take in some history
-                        by visiting the Luna 2 and Apollo 11 landing sites.
-                    </p>
+                    <h2 className="ff-serif uppercase fs-800">{destination.name}</h2>
+                    <p>{destination.description}</p>
+                    
                     <div className="destination-meta flex">
                         <div>
                             <h3 className="ff-sans-cond uppercase letter-spacing-3 text-light fs-200">Avg. distance</h3>
-                            <p className="ff-serif uppercase">384,400 km</p>
+                            <p className="ff-serif uppercase">{destination.distance}</p>
                         </div>
                         <div>
                             <h3 className="ff-sans-cond uppercase letter-spacing-3 text-light fs-200">Est. travel time</h3>
-                            <p className="ff-serif uppercase">3 days</p>
+                            <p className="ff-serif uppercase">{destination.travel}</p>
                         </div>
                     </div>
                 </article>
