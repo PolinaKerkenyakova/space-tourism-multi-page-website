@@ -6,7 +6,7 @@ import './Destinations.css';
 const Destinations = () => {
     return (
         <div className="destinations">
-            <a class="skip-to-content" href="#main">Skip to content</a>
+            <a className="skip-to-content" href="#main">Skip to content</a>
             <Header />
             <main id="main" className="grid-container grid-container--destinations flow">
 
