@@ -22,7 +22,6 @@
   transform: scale(1.1);
 }
 
-
 .grid-container--technology > .terminology-info {
   grid-area: content;
 }
@@ -48,8 +47,10 @@
   }
 
   .grid-container--technology {
-
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem) minmax(0rem, 35rem);
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem) minmax(
+        0rem,
+        35rem
+      );
 
     --flow-space: 3rem;
     grid-template-areas:
@@ -62,11 +63,23 @@
     grid-area: tabs;
     flex-direction: column;
   }
-  
 
   .grid-container--technology > picture {
     grid-area: image;
     justify-self: end;
     margin: -1rem;
+  }
+}
+
+@media (min-width: 100em) {
+  .grid-container--technology {
+    grid-template-columns:
+      minmax(1rem, 1fr) minmax(0, 5rem) minmax(0, 40rem) minmax(0rem, 35rem)
+      minmax(1rem, 1fr);
+
+    grid-template-areas:
+      ". title title title ."
+      ". tabs content image ."
+      ". tabs content image .";
   }
 }
