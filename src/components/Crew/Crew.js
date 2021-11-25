@@ -1,30 +1,50 @@
-import Header from "../Header/Header";
-import DotNavigation from "../Navigation/DotNavigation";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import getData from '../../services/fetchServices';
+
+import Header from '../Header/Header';
+import DotNavigation from '../Navigation/DotNavigation';
 
 import './Crew.css';
 
 const Crew = () => {
+
+    const [memberInfo, setMemberInfo] = useState({});
+    const [memberSelected, setMemberSelected] = useState();
+
+    const getSelectedMemberHandler = (memberId) => {
+        setMemberSelected(memberId);
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const memberData = await getData('crew', memberSelected);
+            setMemberInfo(memberData);
+        }
+
+        fetchData();
+    }, [memberSelected]);
+    
     return (
         <div className="crew">
-            <a href="#main" className="skip-to-content">Skip to content</a>
+            <Link to="#main" className="skip-to-content">Skip to content</Link>
             <Header />
             <main id="main" className="grid-container grid-container--crew flow">
                 <h1 className="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
 
-        <picture>
-            <source srcSet="/assets/crew/image-douglas-hurley.webp" type="image/webp"/>
-            <img src="/assets/crew/image-douglas-hurley.png" alt="" />
-        </picture>
+                <picture>
+                    {/* <img src={`${memberInfo.images.webp || {}}`} alt={`${memberInfo.role}`} /> */}
+                    <img src={(memberInfo.image)} alt={memberInfo.name}/>
+                </picture>
 
-                <DotNavigation />
+                <DotNavigation getSelectedMember={getSelectedMemberHandler} />
 
                 <article className="crew-info flow">
-                    <h2 className="ff-serif uppercase fs-600 text-white">Commander</h2>
-                    <p className="ff-serif uppercase fs-700">Douglas Hurley</p>
+                    <h2 className="ff-serif uppercase fs-600 text-white">{memberInfo.role}</h2>
+                    <p className="ff-serif uppercase fs-700">{memberInfo.name}</p>
                     <p className="text-light fs-400">
-                        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-                        and former NASA astronaut. He launched into space for the third time as
-                        commander of Crew Dragon Demo-2.
+                        {memberInfo.bio}
                     </p>
                 </article>
             </main>
