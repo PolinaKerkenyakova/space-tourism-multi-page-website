@@ -23,44 +23,8 @@
   margin-right: 0.5em;
 }
 
-@media (max-width: 35em) {
-  .primary-navigation {
-    --underline-gap: 0.5rem;
-    position: fixed;
-    inset: 0 0 0 30%;
-    z-index: 1000;
-    list-style: none;
-    padding: min(20rem, 15vh) 2rem;
-    margin: 0;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 500ms ease-in-out;
-  }
-
-  .expand-menu {
-    transform: translateX(0%);
-  }
-}
-
-@media (min-width: 35em) {
-  padding-inline: clamp(3rem, 7vw, 7rem);
-}
-
-@media (min-width: 35em) and (max-width: 44.999em) {
-  .primary-navigation {
-    padding-inline: 3rem;
-  }
-
-  .primary-navigation a > span {
-    display: none;
-  }
-}
-
-@media (min-width: 45em) {
-  .primary-navigation {
-    padding-inline: 5rem;
-    margin-block: 2rem;
-  }
+.mobile-nav-toggle {
+  display: none;
 }
 
 .underline-indicators > * {
@@ -82,17 +46,23 @@
 }
 
 @media (max-width: 35em) {
-  .underline-indicators > .active,
-  .underline-indicators > [aria-selected="true"] {
-    border-color: hsl(var(--clr-white), 0);
+  .primary-navigation {
+    --underline-gap: 0.5rem;
+    position: fixed;
+    inset: 0 0 0 30%;
+    z-index: 1000;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
   }
-}
 
-.mobile-nav-toggle {
-  display: none;
-}
+  .expand-menu {
+    transform: translateX(0%);
+  }
 
-@media (max-width: 35em) {
   .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -103,5 +73,33 @@
     border: none;
     width: 2rem;
     aspect-ratio: 1;
+  }
+
+  .underline-indicators > .active,
+  .underline-indicators > [aria-selected="true"] {
+    border-color: hsl(var(--clr-white), 0);
+  }
+}
+
+@media (min-width: 35em) {
+  .primary-navigation {
+    padding-inline: clamp(3rem, 7vw, 7rem);
+  }
+}
+
+@media (min-width: 35em) and (max-width: 44.999em) {
+  .primary-navigation {
+    padding-inline: 3rem;
+  }
+
+  .primary-navigation a > span {
+    display: none;
+  }
+}
+
+@media (min-width: 45em) {
+  .primary-navigation {
+    padding-inline: 5rem;
+    margin-block: 2rem;
   }
 }
