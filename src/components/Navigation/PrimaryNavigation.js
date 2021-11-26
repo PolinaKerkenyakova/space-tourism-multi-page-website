@@ -6,16 +6,16 @@ import closeMenu from './assets/icon-close.svg';
 import './PrimaryNavigation.css';
 
 const PrimaryNavigation = () => {
-    const [isMenuVisible, setIsMenuVisible] = useState(false);
+    const [isMenuExpanded, setIsMenuExpanded] = useState(false);
     const showMenuHandler = (e) => {
-        setIsMenuVisible(!isMenuVisible);
+        setIsMenuExpanded(!isMenuExpanded);
     }
 
     const ShowMenu = (
         <>
-            <button onClick={showMenuHandler} className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded="true">Menu</span><img src={closeMenu} alt="" /></button>
+            <button onClick={showMenuHandler} className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded={isMenuExpanded}>Menu</span><img src={isMenuExpanded ? closeMenu : openMenu} alt="" /></button>
             <nav>
-                <ul id="primary-navigation" data-visible="true" className="primary-navigation underline-indicators flex">
+                <ul id="primary-navigation" className={`primary-navigation underline-indicators flex ${isMenuExpanded ? 'expand-menu' : ''}`}>
                     <li><Link to="/" className="ff-sans-cond uppercase letter-spacing-2 text-white">< span aria-hidden="true">00</span>Home</Link></li>
                     <li><Link to="/destinations" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destinations</Link></li>
                     <li><Link to="/crew" className="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</Link></li>

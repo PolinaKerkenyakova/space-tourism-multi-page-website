@@ -37,7 +37,7 @@
     transition: transform 500ms ease-in-out;
   }
 
-  .primary-navigation[data-visible="true"] {
+  .expand-menu {
     transform: translateX(0%);
   }
 }
