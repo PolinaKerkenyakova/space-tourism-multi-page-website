@@ -21,7 +21,7 @@
     border: 1px solid hsl(var(--clr-white), 1);
 }
 
-.number-indicators > [aria-selected="true"] {
+.number-indicators > [data-selected="true"] {
     background-color: hsl(var(--clr-white));
     color: hsl(var(--clr-dark));
 }

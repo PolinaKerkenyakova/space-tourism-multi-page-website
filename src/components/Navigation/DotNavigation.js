@@ -8,10 +8,10 @@ const DotNavigation = (props) => {
 
     return (
         <div className="flex dot-indicators">
-            <button aria-selected={isSelected('0')} id="0" onClick={selectItemHandler}><span className="sr-only">Commander</span></button>
-            <button aria-selected={isSelected('1')} id="1" onClick={selectItemHandler}><span className="sr-only">Mission Specialist</span></button>
-            <button aria-selected={isSelected('2')} id="2" onClick={selectItemHandler}><span className="sr-only">Pilot</span></button>
-            <button aria-selected={isSelected('3')} id="3" onClick={selectItemHandler}><span className="sr-only">Flight Engineer</span></button>
+            <button data-selected={isSelected('0')} id="0" onClick={selectItemHandler}><span className="sr-only">Commander</span></button>
+            <button data-selected={isSelected('1')} id="1" onClick={selectItemHandler}><span className="sr-only">Mission Specialist</span></button>
+            <button data-selected={isSelected('2')} id="2" onClick={selectItemHandler}><span className="sr-only">Pilot</span></button>
+            <button data-selected={isSelected('3')} id="3" onClick={selectItemHandler}><span className="sr-only">Flight Engineer</span></button>
         </div>
     );
 }

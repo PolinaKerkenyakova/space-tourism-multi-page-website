@@ -11,6 +11,6 @@
   background-color: hsl(var(--clr-white), 0.5);
 }
 
-.dot-indicators > [aria-selected="true"] {
+.dot-indicators > [data-selected="true"] {
   background-color: hsl(var(--clr-white), 1);
 }
