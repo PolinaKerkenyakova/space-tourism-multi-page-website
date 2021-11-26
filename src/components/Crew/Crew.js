@@ -38,7 +38,7 @@ const Crew = () => {
                     <img src={(memberInfo.image)} alt={memberInfo.name}/>
                 </picture>
 
-                <DotNavigation getSelectedMember={getSelectedMemberHandler} />
+                <DotNavigation getSelectedItem={getSelectedMemberHandler} />
 
                 <article className="crew-info flow">
                     <h2 className="ff-serif uppercase fs-600 text-white">{memberInfo.role}</h2>
@@ -49,7 +49,7 @@ const Crew = () => {
                 </article>
             </main>
         </div>
-    )
+    );
 }
 
 export default Crew;

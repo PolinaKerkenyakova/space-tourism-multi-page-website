@@ -39,7 +39,7 @@ const Destinations = () => {
                     <img src={destination.image} alt={destination.name} />
                 </picture>
 
-                <TabNavigation getSelectedPlanet={getSelectedPlanetHandler} />
+                <TabNavigation getSelectedItem={getSelectedPlanetHandler} />
 
                 <article className="destination-info">
                     <h2 className="ff-serif uppercase fs-800">{destination.name}</h2>

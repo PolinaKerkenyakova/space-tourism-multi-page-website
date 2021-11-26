@@ -33,7 +33,7 @@ const Technology = () => {
             <main id="main" className=" grid-container grid-container--technology flow">
                 <h1 className="numbered-title"><span aria-hidden="true">03</span> Space launch 101</h1>
 
-                <NumberNavigation getSelectedTech={getSelectedTechHandler} />
+                <NumberNavigation getSelectedItem={getSelectedTechHandler} />
                 <article className="terminology-info">
                     <div className="flow flow-space--small ">
                         <h2 className="ff-sans-cond letter-spacing-3 fs-200 text-light uppercase">The terminology...</h2>
