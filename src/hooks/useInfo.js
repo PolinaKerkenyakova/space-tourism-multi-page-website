@@ -18,7 +18,7 @@ const useInfo = (databaseName) => {
         }
 
         fetchData();
-    }, [itemSelected]);
+    }, [itemSelected, databaseName]);
     
 
     return {
