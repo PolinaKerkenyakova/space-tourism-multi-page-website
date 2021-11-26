@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import getData from '../../services/fetchServices';
+import useInfo from '../../hooks/useInfo';
 
 import Header from '../Header/Header';
 import TabNavigation from '../Navigation/TabNavigation';
@@ -10,21 +9,7 @@ import './Destinations.css';
 
 const Destinations = () => {
 
-    const [destination, setDestination] = useState({});
-    const [selectedPlanet, setSelectedPlanet] = useState();
-
-    const getSelectedPlanetHandler = (planetId) => {
-        setSelectedPlanet(planetId);
-    }
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const destinationData = await getData('destinations', selectedPlanet);
-            setDestination(destinationData);
-        }
-
-        fetchData();
-    }, [selectedPlanet]);
+    const {info, getSelectedItemHandler} = useInfo('destinations')
 
     return (
         <div className="destinations">
@@ -36,23 +21,23 @@ const Destinations = () => {
 
                 <picture>
                     {/* <source srcSet={destination.images.webp || {}} type="image/webp" /> */}
-                    <img src={destination.image} alt={destination.name} />
+                    <img src={info.image} alt={info.name} />
                 </picture>
 
-                <TabNavigation getSelectedItem={getSelectedPlanetHandler} />
+                <TabNavigation getSelectedItem={getSelectedItemHandler} />
 
                 <article className="destination-info">
-                    <h2 className="ff-serif uppercase fs-800">{destination.name}</h2>
-                    <p className="text-light">{destination.description}</p>
+                    <h2 className="ff-serif uppercase fs-800">{info.name}</h2>
+                    <p className="text-light">{info.description}</p>
                     
                     <div className="destination-meta flex">
                         <div>
                             <h3 className="ff-sans-cond uppercase letter-spacing-3 text-light fs-200">Avg. distance</h3>
-                            <p className="ff-serif uppercase">{destination.distance}</p>
+                            <p className="ff-serif uppercase">{info.distance}</p>
                         </div>
                         <div>
                             <h3 className="ff-sans-cond uppercase letter-spacing-3 text-light fs-200">Est. travel time</h3>
-                            <p className="ff-serif uppercase">{destination.travel}</p>
+                            <p className="ff-serif uppercase">{info.travel}</p>
                         </div>
                     </div>
                 </article>
