@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import openMenu from './assets/icon-hamburger.svg';
 import closeMenu from './assets/icon-close.svg';
 
@@ -11,7 +12,7 @@ const PrimaryNavigation = () => {
         setIsMenuExpanded(!isMenuExpanded);
     }
 
-    const ShowMenu = (
+    return (
         <>
             <button onClick={showMenuHandler} className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded={isMenuExpanded}>Menu</span><img src={isMenuExpanded ? closeMenu : openMenu} alt="" /></button>
             <nav>
@@ -23,20 +24,6 @@ const PrimaryNavigation = () => {
                 </ul>
             </nav>
         </>
-    )
-
-    const HideMenu = (
-        <>
-            <button onClick={showMenuHandler} className="mobile-nav-toggle" aria-controls="primary-navigation"><span className="sr-only" aria-expanded="false">Menu</span><img src={openMenu} alt="" /></button>
-            <nav>
-                <ul data-visible="false" className="primary-navigation"></ul>
-            </nav>
-        </>
-    )
-
-    return (
-        // isMenuVisible ? ShowMenu : HideMenu
-        ShowMenu
     );
 }
 

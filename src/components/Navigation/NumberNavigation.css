@@ -1,6 +1,7 @@
 .number-indicators {
     flex-direction: column;
     align-items: baseline;
+    --gap: 1.3rem;
 }
 
 .number-indicators * {

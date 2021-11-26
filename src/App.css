@@ -162,7 +162,8 @@ select {
   padding-bottom: 4rem;
 }
 
-.grid-container p:not([class]) {
+.grid-container p:not([class]),
+.grid-container p[class="text-light"] {
   max-width: 50ch;
 }
 

@@ -43,7 +43,7 @@ const Destinations = () => {
 
                 <article className="destination-info">
                     <h2 className="ff-serif uppercase fs-800">{destination.name}</h2>
-                    <p>{destination.description}</p>
+                    <p className="text-light">{destination.description}</p>
                     
                     <div className="destination-meta flex">
                         <div>

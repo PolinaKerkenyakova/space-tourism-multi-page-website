@@ -27,3 +27,10 @@
   opacity: 1;
   transform: scale(1.4);
 }
+
+
+@media (max-width: 35em) {
+  .large-button {
+    padding: 0 1em;
+  }
+}

@@ -34,7 +34,7 @@
 @media (max-width: 35rem) {
   .grid-container--crew > picture > img {
     width: auto;
-    height: 260px;
+    max-height: 260px;
   }
 }
 
